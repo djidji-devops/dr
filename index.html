@@ -81,6 +81,11 @@ nav.scrolled{box-shadow:0 3px 20px rgba(0,87,74,.1)}
   border-radius:60% 40% 30% 70%/60% 30% 70% 40%;
   background:rgba(78,205,196,.1);pointer-events:none;
   animation:morph 12s ease-in-out infinite}
+
+/* SVG pozadina – zubari motivi */
+.hero-bg-svg{
+  position:absolute;inset:0;width:100%;height:100%;
+  pointer-events:none;z-index:0}
 @keyframes morph{
   0%,100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}
   50%{border-radius:30% 60% 70% 40%/50% 60% 30% 60%}}
@@ -346,6 +351,127 @@ footer{background:var(--g1);color:rgba(255,255,255,.45);
 <!-- HERO -->
 <section class="hero">
   <div class="hero-blob"></div>
+
+  <svg class="hero-bg-svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- KRUPNI ZUB levo dole -->
+    <g opacity="0.09" transform="translate(-20,430) scale(2.4)">
+      <path d="M40 10 C20 10 5 28 5 50 C5 65 10 78 15 95 C20 112 22 130 30 140 C34 145 38 143 40 135 C42 143 46 145 50 140 C58 130 60 112 65 95 C70 78 75 65 75 50 C75 28 60 10 40 10Z" fill="white"/>
+    </g>
+    <!-- KRUPNI ZUB desno gore -->
+    <g opacity="0.07" transform="translate(1260,-30) scale(2)">
+      <path d="M40 10 C20 10 5 28 5 50 C5 65 10 78 15 95 C20 112 22 130 30 140 C34 145 38 143 40 135 C42 143 46 145 50 140 C58 130 60 112 65 95 C70 78 75 65 75 50 C75 28 60 10 40 10Z" fill="white"/>
+    </g>
+    <!-- ZUB sredina dole -->
+    <g opacity="0.06" transform="translate(620,580) scale(1.5)">
+      <path d="M40 10 C20 10 5 28 5 50 C5 65 10 78 15 95 C20 112 22 130 30 140 C34 145 38 143 40 135 C42 143 46 145 50 140 C58 130 60 112 65 95 C70 78 75 65 75 50 C75 28 60 10 40 10Z" fill="white"/>
+    </g>
+    <!-- ZUB mali gore levo -->
+    <g opacity="0.06" transform="translate(100,60) scale(0.9)">
+      <path d="M40 10 C20 10 5 28 5 50 C5 65 10 78 15 95 C20 112 22 130 30 140 C34 145 38 143 40 135 C42 143 46 145 50 140 C58 130 60 112 65 95 C70 78 75 65 75 50 C75 28 60 10 40 10Z" fill="white"/>
+    </g>
+    <!-- ZUB mali desno sredina -->
+    <g opacity="0.055" transform="translate(1340,380) scale(0.8)">
+      <path d="M40 10 C20 10 5 28 5 50 C5 65 10 78 15 95 C20 112 22 130 30 140 C34 145 38 143 40 135 C42 143 46 145 50 140 C58 130 60 112 65 95 C70 78 75 65 75 50 C75 28 60 10 40 10Z" fill="white"/>
+    </g>
+
+    <!-- MEDICINSKI KRST veliki -->
+    <g opacity="0.07" transform="translate(860,20) scale(1.4)">
+      <rect x="18" y="0" width="14" height="50" rx="3" fill="white"/>
+      <rect x="0" y="18" width="50" height="14" rx="3" fill="white"/>
+    </g>
+    <!-- KRST desno dole -->
+    <g opacity="0.07" transform="translate(1340,560) scale(1.8)">
+      <rect x="18" y="0" width="14" height="50" rx="3" fill="white"/>
+      <rect x="0" y="18" width="50" height="14" rx="3" fill="white"/>
+    </g>
+    <!-- KRST mali levo sredina -->
+    <g opacity="0.06" transform="translate(30,310) scale(1)">
+      <rect x="18" y="0" width="14" height="50" rx="3" fill="white"/>
+      <rect x="0" y="18" width="50" height="14" rx="3" fill="white"/>
+    </g>
+    <!-- KRST mali dole levo -->
+    <g opacity="0.06" transform="translate(440,680) scale(0.9)">
+      <rect x="18" y="0" width="14" height="50" rx="3" fill="white"/>
+      <rect x="0" y="18" width="50" height="14" rx="3" fill="white"/>
+    </g>
+
+    <!-- KRUŽNI PRSTENOVI -->
+    <circle cx="720" cy="400" r="260" fill="none" stroke="white" stroke-width="1.2" opacity="0.05"/>
+    <circle cx="720" cy="400" r="390" fill="none" stroke="white" stroke-width="1" opacity="0.04"/>
+    <circle cx="720" cy="400" r="530" fill="none" stroke="white" stroke-width="0.7" opacity="0.03"/>
+    <circle cx="720" cy="400" r="680" fill="none" stroke="white" stroke-width="0.5" opacity="0.025"/>
+    <!-- Mali krug gore desno -->
+    <circle cx="1300" cy="120" r="80" fill="none" stroke="white" stroke-width="1" opacity="0.06"/>
+    <circle cx="1300" cy="120" r="50" fill="none" stroke="white" stroke-width="0.6" opacity="0.05"/>
+    <!-- Mali krug dole levo -->
+    <circle cx="140" cy="680" r="90" fill="none" stroke="white" stroke-width="1" opacity="0.05"/>
+    <circle cx="140" cy="680" r="55" fill="none" stroke="white" stroke-width="0.6" opacity="0.04"/>
+
+    <!-- DIJAGONALNE LINIJE -->
+    <line x1="0" y1="700" x2="450" y2="0"  stroke="white" stroke-width="1"   opacity="0.05"/>
+    <line x1="70" y1="800" x2="520" y2="0" stroke="white" stroke-width="0.5" opacity="0.03"/>
+    <line x1="980" y1="0" x2="1440" y2="600" stroke="white" stroke-width="1" opacity="0.04"/>
+    <line x1="1060" y1="0" x2="1440" y2="500" stroke="white" stroke-width="0.5" opacity="0.03"/>
+    <!-- Horizontalna linija -->
+    <line x1="0" y1="400" x2="1440" y2="400" stroke="white" stroke-width="0.5" stroke-dasharray="6 18" opacity="0.04"/>
+
+    <!-- TAČKASTA MREŽA levo gore -->
+    <g opacity="0.07" fill="white">
+      <circle cx="210" cy="130" r="2.5"/><circle cx="270" cy="130" r="2.5"/><circle cx="330" cy="130" r="2.5"/><circle cx="390" cy="130" r="2.5"/><circle cx="450" cy="130" r="2.5"/>
+      <circle cx="210" cy="190" r="2.5"/><circle cx="270" cy="190" r="2.5"/><circle cx="330" cy="190" r="2.5"/><circle cx="390" cy="190" r="2.5"/><circle cx="450" cy="190" r="2.5"/>
+      <circle cx="210" cy="250" r="2.5"/><circle cx="270" cy="250" r="2.5"/><circle cx="330" cy="250" r="2.5"/><circle cx="390" cy="250" r="2.5"/>
+      <circle cx="210" cy="310" r="2"/>  <circle cx="270" cy="310" r="2"/>  <circle cx="330" cy="310" r="2"/>
+    </g>
+    <!-- TAČKASTA MREŽA desno dole -->
+    <g opacity="0.06" fill="white">
+      <circle cx="1040" cy="510" r="2.5"/><circle cx="1100" cy="510" r="2.5"/><circle cx="1160" cy="510" r="2.5"/><circle cx="1220" cy="510" r="2.5"/><circle cx="1280" cy="510" r="2.5"/>
+      <circle cx="1040" cy="570" r="2.5"/><circle cx="1100" cy="570" r="2.5"/><circle cx="1160" cy="570" r="2.5"/><circle cx="1220" cy="570" r="2.5"/>
+      <circle cx="1040" cy="630" r="2"/>  <circle cx="1100" cy="630" r="2"/>  <circle cx="1160" cy="630" r="2"/>
+    </g>
+
+    <!-- PLUS ZNAKOVI -->
+    <g fill="white" font-family="Arial" font-weight="200" text-anchor="middle">
+      <text x="500"  y="85"  font-size="32" opacity="0.09">+</text>
+      <text x="980"  y="55"  font-size="24" opacity="0.07">+</text>
+      <text x="150"  y="420" font-size="28" opacity="0.07">+</text>
+      <text x="1380" y="310" font-size="30" opacity="0.08">+</text>
+      <text x="820"  y="760" font-size="26" opacity="0.07">+</text>
+      <text x="330"  y="760" font-size="22" opacity="0.06">+</text>
+      <text x="1160" y="700" font-size="20" opacity="0.06">+</text>
+    </g>
+
+    <!-- TALASASTE LINIJE – organski osećaj -->
+    <path d="M0 600 Q360 520 720 600 Q1080 680 1440 600" fill="none" stroke="white" stroke-width="1" opacity="0.05"/>
+    <path d="M0 640 Q360 560 720 640 Q1080 720 1440 640" fill="none" stroke="white" stroke-width="0.6" opacity="0.035"/>
+
+    <!-- HEKSAGONALNA MREŽA – sci-fi/medical efekat -->
+    <g opacity="0.04" stroke="white" stroke-width="0.8" fill="none">
+      <polygon points="1200,200 1230,183 1260,200 1260,234 1230,251 1200,234"/>
+      <polygon points="1260,200 1290,183 1320,200 1320,234 1290,251 1260,234"/>
+      <polygon points="1230,251 1260,234 1290,251 1290,285 1260,302 1230,285"/>
+      <polygon points="1200,234 1230,251 1230,285 1200,302 1170,285 1170,251"/>
+    </g>
+    <g opacity="0.04" stroke="white" stroke-width="0.8" fill="none">
+      <polygon points="160,480 190,463 220,480 220,514 190,531 160,514"/>
+      <polygon points="220,480 250,463 280,480 280,514 250,531 220,514"/>
+      <polygon points="190,531 220,514 250,531 250,565 220,582 190,565"/>
+    </g>
+
+    <!-- DNA SPIRALA – medicinski motiv -->
+    <g opacity="0.06" stroke="white" stroke-width="1.2" fill="none">
+      <path d="M1380,650 Q1400,630 1380,610 Q1360,590 1380,570 Q1400,550 1380,530 Q1360,510 1380,490"/>
+      <path d="M1420,650 Q1400,630 1420,610 Q1440,590 1420,570 Q1400,550 1420,530 Q1440,510 1420,490"/>
+      <line x1="1380" y1="650" x2="1420" y2="650" stroke-width="1"/>
+      <line x1="1385" y1="626" x2="1415" y2="626" stroke-width="1"/>
+      <line x1="1380" y1="600" x2="1420" y2="600" stroke-width="1"/>
+      <line x1="1385" y1="574" x2="1415" y2="574" stroke-width="1"/>
+      <line x1="1380" y1="550" x2="1420" y2="550" stroke-width="1"/>
+      <line x1="1385" y1="524" x2="1415" y2="524" stroke-width="1"/>
+      <line x1="1380" y1="500" x2="1420" y2="500" stroke-width="1"/>
+    </g>
+
+  </svg>
   <div class="hero-left">
     <h1>Zdravi zubi,<br><em>lep osmeh</em></h1>
     <p class="hero-sub">
