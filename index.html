@@ -120,49 +120,54 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#eef7f5;color:var(--dark
 .st{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;margin-bottom:8px;}
 .ss{color:var(--muted);line-height:1.7;font-size:.95rem;max-width:520px;}
 
-/* ═══ USLUGE ═══ */
-.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
-.svc{
-  background:#fff;border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:24px 18px;
-  transition:var(--trans);box-shadow:0 2px 10px rgba(0,87,74,.05);
-}
-.svc:hover{transform:translateY(-5px);border-color:var(--g4);
-  box-shadow:0 16px 40px rgba(0,120,107,.12);}
-.svc-ico{
-  width:48px;height:48px;border-radius:12px;
-  background:var(--light);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;margin-bottom:12px;transition:var(--trans);
-}
-.svc:hover .svc-ico{background:var(--g3);border-color:var(--g3);}
-.svc-n{font-size:.9rem;font-weight:800;color:var(--dark);margin-bottom:6px;}
-.svc-d{font-size:.8rem;color:var(--muted);line-height:1.55;margin-bottom:10px;}
-.svc-p{font-size:.82rem;font-weight:700;color:var(--g2);
-  background:var(--light);border-radius:6px;padding:3px 9px;display:inline-block;}
+/* ═══ USLUGE + CENOVNIK (kombinovano) ═══ */
+.usluge-wrap{margin-top:40px;display:flex;flex-direction:column;gap:12px;}
 
-/* ═══ CENOVNIK ═══ */
-.ptable{
-  max-width:680px;margin:40px auto 0;
+/* intro tagovi */
+.usluge-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+.utag{
+  padding:6px 14px;border-radius:20px;font-size:.78rem;font-weight:700;
+  background:var(--light);color:var(--g2);border:1.5px solid var(--border);
+}
+
+/* svaka usluga */
+.usl{
   background:#fff;border:1.5px solid var(--border);
-  border-radius:20px;overflow:hidden;
-  box-shadow:0 6px 30px rgba(0,87,74,.08);
+  border-radius:var(--radius);
+  display:grid;grid-template-columns:56px 1fr auto;
+  align-items:center;gap:0;
+  transition:var(--trans);
+  box-shadow:0 2px 8px rgba(0,87,74,.04);
+  overflow:hidden;
 }
-.pt-head{
-  background:linear-gradient(135deg,var(--g1),var(--g2));
-  padding:16px 24px;display:flex;justify-content:space-between;
-  font-size:10px;font-weight:700;letter-spacing:2px;
-  text-transform:uppercase;color:rgba(255,255,255,.55);
+.usl:hover{border-color:var(--g4);box-shadow:0 8px 28px rgba(0,120,107,.10);transform:translateY(-2px);}
+
+.usl-ico{
+  width:56px;align-self:stretch;
+  background:var(--light);border-right:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;transition:var(--trans);
 }
-.pt-row{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:14px 24px;gap:12px;border-bottom:1px solid var(--border);transition:var(--trans);
+.usl:hover .usl-ico{background:var(--g3);}
+
+.usl-body{padding:14px 18px;}
+.usl-n{font-size:.92rem;font-weight:800;color:var(--dark);margin-bottom:3px;}
+.usl-d{font-size:.79rem;color:var(--muted);line-height:1.5;}
+
+.usl-price{
+  padding:0 20px;text-align:right;flex-shrink:0;
+  font-size:1rem;font-weight:900;color:var(--g2);white-space:nowrap;
 }
-.pt-row:last-child{border-bottom:none;}
-.pt-row:hover{background:var(--light);}
-.pt-n{font-size:.88rem;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:8px;}
-.pt-n em{font-size:15px;font-style:normal;}
-.pt-v{font-size:.95rem;font-weight:800;color:var(--g2);white-space:nowrap;}
+.usl-price small{display:block;font-size:.68rem;font-weight:500;color:var(--muted);}
+
+@media(max-width:768px){
+  .usl{grid-template-columns:48px 1fr auto;}
+  .usl-ico{width:48px;font-size:18px;}
+  .usl-body{padding:11px 12px;}
+  .usl-n{font-size:.85rem;}
+  .usl-d{font-size:.75rem;}
+  .usl-price{padding:0 14px;font-size:.9rem;}
+}
 
 /* ═══ KONTAKT ═══ */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px;}
@@ -306,39 +311,65 @@ footer{
   </div>
 </section>
 
-<!-- USLUGE -->
+<!-- USLUGE + CENOVNIK -->
 <div class="sec" id="usluge">
-  <div class="sl reveal">Šta nudimo</div>
-  <h2 class="st reveal">Stomatološke usluge</h2>
-  <p class="ss reveal">Protetika, hirurgija, estetika i preventiva – sve na jednom mestu.</p>
-  <div class="svc-grid">
-    <div class="svc reveal"><div class="svc-ico">👑</div><div class="svc-n">Keramičke krunice i mostovi</div><p class="svc-d">Trajna obnova oštećenih zuba.</p><span class="svc-p">od 100€</span></div>
-    <div class="svc reveal"><div class="svc-ico">🦷</div><div class="svc-n">Proteze</div><p class="svc-d">Vizil, akrilatne i silikonske.</p><span class="svc-p">od 250€</span></div>
-    <div class="svc reveal"><div class="svc-ico">✨</div><div class="svc-n">Viniri</div><p class="svc-d">Keramički i kompozitni.</p><span class="svc-p">od 35€</span></div>
-    <div class="svc reveal"><div class="svc-ico">🔩</div><div class="svc-n">Implanti</div><p class="svc-d">Trajna zamena izgubljenih zuba.</p><span class="svc-p">od 350€</span></div>
-    <div class="svc reveal"><div class="svc-ico">🏥</div><div class="svc-n">Oralno-hirurški zahvati</div><p class="svc-d">Precizni hirurški zahvati.</p><span class="svc-p">od 100€</span></div>
-    <div class="svc reveal"><div class="svc-ico">💎</div><div class="svc-n">Estetske plombe</div><p class="svc-d">Prirodan izgled, dugotrajan efekat.</p><span class="svc-p">od 20€</span></div>
-    <div class="svc reveal"><div class="svc-ico">⬜</div><div class="svc-n">Izbeljivanje zuba</div><p class="svc-d">Bezbedan, profesionalan tretman.</p><span class="svc-p">od 100€</span></div>
-    <div class="svc reveal"><div class="svc-ico">🪥</div><div class="svc-n">Čišćenje zuba</div><p class="svc-d">Poliranje i uklanjanje kamenca.</p><span class="svc-p">od 20€</span></div>
-  </div>
-</div>
+  <div class="sl reveal">Naše usluge</div>
+  <h2 class="st reveal">Stomatološke usluge i cene</h2>
+  <p class="ss reveal">Sveobuhvatna stomatološka zaštita – protetika, oralna hirurgija, estetska stomatologija i lečenje bolesti zuba.</p>
 
-<!-- CENOVNIK -->
-<div class="sec sec-tint" id="cenovnik">
-  <div class="sl reveal" style="text-align:center">Cene</div>
-  <h2 class="st reveal" style="text-align:center">Cenovnik</h2>
-  <p class="ss reveal" style="text-align:center;margin:0 auto">Sve cene u evrima – bez skrivenih troškova.</p>
-  <div class="ptable reveal">
-    <div class="pt-head"><span>Usluga</span><span>Cena</span></div>
-    <div class="pt-row"><span class="pt-n"><em>👑</em>Keramičke krunice i mostovi</span><span class="pt-v">od 100 €</span></div>
-    <div class="pt-row"><span class="pt-n"><em>🦷</em>Proteze</span><span class="pt-v">od 250 €</span></div>
-    <div class="pt-row"><span class="pt-n"><em>✨</em>Viniri keramički</span><span class="pt-v">od 200 €</span></div>
-    <div class="pt-row"><span class="pt-n"><em>✨</em>Viniri kompozitni</span><span class="pt-v">od 35 €</span></div>
-    <div class="pt-row"><span class="pt-n"><em>🔩</em>Implanti</span><span class="pt-v">od 350 €</span></div>
-    <div class="pt-row"><span class="pt-n"><em>🏥</em>Oralno-hirurški zahvati</span><span class="pt-v">od 100 €</span></div>
-    <div class="pt-row"><span class="pt-n"><em>💎</em>Estetske plombe</span><span class="pt-v">od 20 €</span></div>
-    <div class="pt-row"><span class="pt-n"><em>⬜</em>Izbeljivanje zuba</span><span class="pt-v">od 100 €</span></div>
-    <div class="pt-row"><span class="pt-n"><em>🪥</em>Čišćenje zuba</span><span class="pt-v">od 20 €</span></div>
+  <div class="usluge-tags reveal">
+    <span class="utag">🏥 Oralna hirurgija</span>
+    <span class="utag">👑 Protetika</span>
+    <span class="utag">✨ Estetska stomatologija</span>
+    <span class="utag">🦷 Lečenje zuba</span>
+  </div>
+
+  <div class="usluge-wrap">
+    <div class="usl reveal">
+      <div class="usl-ico">👑</div>
+      <div class="usl-body"><div class="usl-n">Keramičke krunice i mostovi</div><div class="usl-d">Idealno rešenje za obnovu oštećenih zuba. Trajna i estetski savršena protetika.</div></div>
+      <div class="usl-price">od 100€<small>po zubu</small></div>
+    </div>
+    <div class="usl reveal">
+      <div class="usl-ico">🦷</div>
+      <div class="usl-body"><div class="usl-n">Proteze</div><div class="usl-d">Vizil, akrilatne i silikonske. Udobna i funkcionalna rešenja za nadoknadu izgubljenih zuba.</div></div>
+      <div class="usl-price">od 250€</div>
+    </div>
+    <div class="usl reveal">
+      <div class="usl-ico">✨</div>
+      <div class="usl-body"><div class="usl-n">Viniri keramički</div><div class="usl-d">Estetski savršeni prekrivači za poboljšanje izgleda vaših zuba.</div></div>
+      <div class="usl-price">od 200€<small>po zubu</small></div>
+    </div>
+    <div class="usl reveal">
+      <div class="usl-ico">✨</div>
+      <div class="usl-body"><div class="usl-n">Viniri kompozitni</div><div class="usl-d">Pristupačnija alternativa keramičkim vinirima sa odličnim estetskim efektom.</div></div>
+      <div class="usl-price">od 35€<small>po zubu</small></div>
+    </div>
+    <div class="usl reveal">
+      <div class="usl-ico">🔩</div>
+      <div class="usl-body"><div class="usl-n">Implanti</div><div class="usl-d">Trajna rešenja za zamenu izgubljenih zuba. Funkcija i estetika kao prirodni zub.</div></div>
+      <div class="usl-price">od 350€</div>
+    </div>
+    <div class="usl reveal">
+      <div class="usl-ico">🏥</div>
+      <div class="usl-body"><div class="usl-n">Oralno-hirurški zahvati</div><div class="usl-d">Precizni zahvati za složenije stomatološke probleme uz maksimalnu brigu o pacijentu.</div></div>
+      <div class="usl-price">od 100€</div>
+    </div>
+    <div class="usl reveal">
+      <div class="usl-ico">💎</div>
+      <div class="usl-body"><div class="usl-n">Estetske plombe</div><div class="usl-d">Savremena i prirodna rešenja za obnovu oštećenih zuba. Dugotrajni efekat.</div></div>
+      <div class="usl-price">od 20€</div>
+    </div>
+    <div class="usl reveal">
+      <div class="usl-ico">⬜</div>
+      <div class="usl-body"><div class="usl-n">Izbeljivanje zuba</div><div class="usl-d">Bezbedna i efikasna metoda za osveženje beline zuba. Profesionalni tretman.</div></div>
+      <div class="usl-price">od 100€</div>
+    </div>
+    <div class="usl reveal">
+      <div class="usl-ico">🪥</div>
+      <div class="usl-body"><div class="usl-n">Čišćenje zuba</div><div class="usl-d">Profesionalno čišćenje i poliranje za očuvanje zdravlja vaših zuba. Uklanjanje kamenca.</div></div>
+      <div class="usl-price">od 20€</div>
+    </div>
   </div>
 </div>
 
