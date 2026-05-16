@@ -81,13 +81,14 @@ body{
 
 /* ═══ HERO ═══ */
 .hero{
-  padding:44px 5% 48px;
+  min-height:100svh;
+  padding:40px 5%;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:28px;
+  gap:32px;
   background:transparent;
 }
 .hero-logo img{
-  max-width:480px;width:100%;height:auto;
+  max-width:460px;width:100%;height:auto;
   display:block;margin:0 auto;
   filter:drop-shadow(0 4px 20px rgba(0,80,50,.18));
 }
@@ -95,38 +96,75 @@ body{
   width:60px;height:3px;border-radius:2px;
   background:linear-gradient(90deg,var(--g3),var(--g5));
 }
+.hero-tagline{
+  font-size:clamp(1.6rem,5vw,2.4rem);
+  font-weight:900;color:var(--g1);
+  letter-spacing:-.5px;line-height:1.2;
+}
+.hero-tagline span{color:var(--g3);}
+.hero-desc{
+  font-size:clamp(.9rem,2.2vw,1.05rem);
+  color:var(--muted);line-height:1.8;
+  max-width:420px;margin:0 auto;
+}
+.hero-badges{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+}
+.hero-badge{
+  padding:7px 14px;border-radius:30px;
+  font-size:.78rem;font-weight:600;
+  background:rgba(255,255,255,.6);
+  border:1.5px solid rgba(0,100,60,.15);
+  color:var(--g1);backdrop-filter:blur(6px);
+}bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-size:11px;font-weight:600;color:var(--muted);letter-spacing:1px;
+  text-transform:uppercase;animation:bounce 2s ease-in-out infinite;
+  text-decoration:none;
+}
+.hero-scroll svg{opacity:.5;}
+@keyframes bounce{
+  0%,100%{transform:translateX(-50%) translateY(0);}
+  50%{transform:translateX(-50%) translateY(6px);}
+}
 .hero-btns{
   display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
 }
+.hero-btns{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+}
 .btn-call{
   display:flex;align-items:center;gap:9px;
-  padding:14px 26px;border-radius:50px;font-size:14px;font-weight:700;
-  text-decoration:none;color:#fff;background:var(--g1);
-  box-shadow:0 4px 16px rgba(0,45,34,.25);transition:var(--trans);
+  padding:13px 24px;border-radius:12px;font-size:14px;font-weight:700;
+  text-decoration:none;color:#fff;
+  background:linear-gradient(135deg,var(--g1),var(--g2));
+  box-shadow:0 4px 16px rgba(0,45,34,.2);transition:var(--trans);
+  border:none;
 }
-.btn-call:hover{background:var(--g2);transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,45,34,.3);}
+.btn-call:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,45,34,.28);}
 .btn-loc{
   display:flex;align-items:center;gap:9px;
-  padding:14px 26px;border-radius:50px;font-size:14px;font-weight:700;
+  padding:13px 24px;border-radius:12px;font-size:14px;font-weight:700;
   text-decoration:none;color:var(--g1);
-  background:rgba(255,255,255,.7);backdrop-filter:blur(8px);
-  border:2px solid rgba(0,120,80,.2);
-  box-shadow:0 4px 14px rgba(0,80,50,.1);transition:var(--trans);
+  background:rgba(255,255,255,.75);
+  border:2px solid rgba(0,100,60,.2);
+  box-shadow:0 4px 14px rgba(0,80,50,.08);
+  backdrop-filter:blur(8px);transition:var(--trans);
 }
-.btn-loc:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,80,50,.15);}
+.btn-loc:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,80,50,.14);}
 .btn-ig{
   display:flex;align-items:center;gap:9px;
-  padding:14px 26px;border-radius:50px;font-size:14px;font-weight:700;
+  padding:13px 24px;border-radius:12px;font-size:14px;font-weight:700;
   text-decoration:none;color:#fff;
-  background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
-  box-shadow:0 4px 16px rgba(131,58,180,.3);transition:var(--trans);
+  background:linear-gradient(135deg,#6a11cb,#fc2c77);
+  box-shadow:0 4px 16px rgba(106,17,203,.2);transition:var(--trans);
 }
-.btn-ig:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(131,58,180,.45);}
+.btn-ig:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(106,17,203,.32);}
 
 @media(max-width:600px){
   .hero{padding:32px 5% 36px;gap:22px;}
   .hero-logo img{max-width:100%;}
-  .btn-call,.btn-loc,.btn-ig{flex:1;min-width:140px;justify-content:center;}
+  .btn-call,.btn-loc,.btn-ig{flex:1;min-width:140px;justify-content:center;font-size:13px;}
 }
 
 /* ═══ SEKCIJE ═══ */
@@ -213,19 +251,42 @@ footer{
 <div class="wrap">
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" style="position:relative;">
   <div class="hero-logo">
     <img src="logo.png" alt="Stomatološka Ordinacija Bogdanović"/>
   </div>
+
+  <div class="hero-tagline">
+    Zdravi zubi — <span>lep osmeh</span>
+  </div>
+
   <div class="hero-divider"></div>
+
+  <p class="hero-desc">
+    Kompletna stomatološka zaštita u Stublinama.<br>
+    Implanti, krunice, estetika i preventiva —<br>
+    stručan tim, moderna oprema, fer cene.
+  </p>
+
+  <div class="hero-badges">
+    <div class="hero-badge">🕒 Pon–Pet: 10:00–19:00</div>
+    <div class="hero-badge">📍 Valjevski put 247, Stubline</div>
+    <div class="hero-badge">⚠️ Zakazivanje obavezno</div>
+  </div>
+
   <div class="hero-btns">
-    <a href="tel:+381613057461" class="btn-call">📞 061 3057461</a>
-    <a href="https://maps.google.com/?q=44.574364,20.152403" target="_blank" class="btn-loc">📍 Valjevski put 247</a>
+    <a href="tel:+381613057461" class="btn-call">📞 Zakažite termin</a>
+    <a href="#usluge" class="btn-loc">👀 Pogledajte usluge</a>
     <a href="https://instagram.com/" target="_blank" class="btn-ig">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
       Instagram
     </a>
   </div>
+
+  <a href="#usluge" class="hero-scroll">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    Usluge
+  </a>
 </section>
 
 <!-- USLUGE -->
