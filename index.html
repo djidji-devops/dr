@@ -44,10 +44,16 @@ body{
   background:rgba(255,255,255,.18);
   backdrop-filter:blur(2px);
 }
+@keyframes toothRise{
+  0%   { transform: translateY(0)     rotate(0deg);   }
+  25%  { transform: translateY(-30vh) rotate(15deg);  }
+  50%  { transform: translateY(-55vh) rotate(-10deg); }
+  75%  { transform: translateY(-80vh) rotate(20deg);  }
+  100% { transform: translateY(-115vh) rotate(5deg);  }
+}
 @keyframes rise{
   0%{transform:translateY(110vh) scale(0.8);opacity:0}
-  10%{opacity:.7}
-  90%{opacity:.3}
+  10%{opacity:.7}90%{opacity:.3}
   100%{transform:translateY(-10vh) scale(1.1);opacity:0}
 }
 .wave{
@@ -247,7 +253,7 @@ footer{
 </div>
 
 <!-- KONTAKT -->
-<div class="sec sec-tint" id="kontakt">
+<div class="sec" id="kontakt">
   <div class="sl reveal">Pronađite nas</div>
   <h2 class="st reveal">Kontakt i lokacija</h2>
   <div class="contact-grid">
@@ -269,16 +275,7 @@ footer{
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="fb">🦷 Ordinacija Bogdanović</div>
-  <div class="fc">© 2025 · Valjevski put 247, Stubline</div>
-  <div class="fl">
-    <a href="#usluge">Usluge</a>
-    <a href="#kontakt">Kontakt</a>
-    <a href="https://maps.google.com/?q=44.574364,20.152403" target="_blank">Mapa</a>
-  </div>
-</footer>
+
 
 </div>
 
@@ -362,22 +359,29 @@ function animateTeeth(){
 }
 animateTeeth();
 
-// Plutajući zubi 🦷
-for(let i=0;i<12;i++){
-  const d=document.createElement('div');
-  const dur=12+Math.random()*10;
-  const delay=-(Math.random()*dur);
-  d.style.cssText=
-    'position:fixed;'
-    +'font-size:'+(34+Math.random()*32)+'px;'
-    +'left:'+Math.random()*92+'%;'
-    +'top:100vh;'
-    +'z-index:1;'
-    +'pointer-events:none;user-select:none;'
-    +'filter:drop-shadow(0 2px 8px rgba(0,100,60,.2));'
-    +'animation:rise '+dur+'s '+delay+'s linear infinite;';
-  d.textContent='🦷';
-  document.body.appendChild(d);
+// Animirani zubi
+const toothCount = 15;
+for(let i = 0; i < toothCount; i++){
+  const t = document.createElement('span');
+  const size = 30 + Math.random() * 50;
+  const left = Math.random() * 100;
+  const dur = 8 + Math.random() * 12;
+  const delay = -(Math.random() * dur);
+  const opacity = 0.25 + Math.random() * 0.45;
+  t.textContent = '🦷';
+  t.style.cssText = `
+    position: fixed;
+    left: ${left}vw;
+    top: 110vh;
+    font-size: ${size}px;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    opacity: ${opacity};
+    animation: toothRise ${dur}s ${delay}s linear infinite;
+    filter: drop-shadow(0 2px 6px rgba(0,100,60,.3));
+  `;
+  document.body.appendChild(t);
 }
 
 // Medicinski krstevi
