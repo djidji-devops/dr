@@ -13,21 +13,45 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Segoe UI',Arial,sans-serif;background:#eef7f5;color:var(--dark);overflow-x:hidden}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#eef7f5;color:var(--dark);overflow-x:hidden;text-align:center;}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-thumb{background:var(--g3);border-radius:2px}
 
 /* ═══ HEADER ═══ */
 .site-header{
   background:#fff;
-  padding:10px 5%;
-  display:flex;align-items:center;justify-content:center;
+  padding:12px 5%;
+  display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+  text-align:center;
   border-bottom:3px solid var(--g4);
   box-shadow:0 4px 24px rgba(0,87,74,.10);
 }
-.site-header img{
-  max-width:560px;width:100%;height:auto;
-  object-fit:contain;display:block;
+.hdr-btn{
+  display:flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:50px;font-size:13px;font-weight:700;
+  text-decoration:none;transition:var(--trans);white-space:nowrap;
+}
+.hdr-call{
+  color:var(--g1);background:#fff;
+  border:2px solid var(--g4);
+  box-shadow:0 2px 12px rgba(0,168,150,.15);
+}
+.hdr-call:hover{background:var(--g4);color:#fff;transform:translateY(-1px);}
+.hdr-loc{
+  color:var(--g2);background:var(--light);
+  border:2px solid var(--border);
+}
+.hdr-loc:hover{background:var(--g4);color:#fff;border-color:var(--g4);transform:translateY(-1px);}
+.hdr-ig{
+  color:#fff;
+  background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+  border:2px solid transparent;
+  box-shadow:0 2px 12px rgba(131,58,180,.25);
+}
+.hdr-ig:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(131,58,180,.4);}
+@media(max-width:480px){
+  .site-header{gap:8px;}
+  .hdr-btn{padding:9px 16px;font-size:12px;}
 }
 
 /* ═══ HERO ═══ */
@@ -103,7 +127,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#eef7f5;color:var(--dark
 .btn-ig svg,.btn-call svg{flex-shrink:0;}
 
 /* ═══ USLUGE ═══ */
-.sec{padding:68px 5%;}
+.sec{padding:68px 5%;text-align:center;}
 .sec-tint{background:#e4f2ef;}
 .sl{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--g4);text-transform:uppercase;margin-bottom:8px;}
 .st{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;margin-bottom:8px;}
@@ -214,7 +238,16 @@ footer{
 
 <!-- HEADER -->
 <header class="site-header">
-  <img src="logo3.png" alt="Stomatološka Ordinacija Bogdanović"/>
+  <a href="tel:+381613057461" class="hdr-btn hdr-call">
+    📞 061 3057461
+  </a>
+  <a href="https://maps.google.com/?q=44.574364,20.152403" target="_blank" class="hdr-btn hdr-loc">
+    📍 Valjevski put 247, Stubline
+  </a>
+  <a href="https://instagram.com/" target="_blank" class="hdr-btn hdr-ig">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+    Instagram
+  </a>
 </header>
 
 <!-- HERO -->
