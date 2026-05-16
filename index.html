@@ -3,18 +3,12 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Stomatološka Ordinacija Bogdanović – Stomatolog Obrenovac, UB</title>
+<title>Stomatološka Ordinacija Bogdanović – Obrenovac, UB</title>
 <meta name="description" content="Stomatološka ordinacija Bogdanović, Valjevski put 247, Stubline. Implanti od 350€, krunice od 100€. ☎ 061 3057461. Pon–Pet 10–19h."/>
-<meta name="robots" content="index,follow"/>
-<link rel="canonical" href="https://www.bogdanovic-dental.com/"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Stomatološka Ordinacija Bogdanović","url":"https://www.bogdanovic-dental.com","telephone":"+381613057461","address":{"@type":"PostalAddress","streetAddress":"Valjevski put 247","addressLocality":"Stubline","addressRegion":"Obrenovac","postalCode":"11500","addressCountry":"RS"},"geo":{"@type":"GeoCoordinates","latitude":44.574364,"longitude":20.152403},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"19:00"}]}</script>
-
 <style>
 :root{
   --g1:#002d22;--g2:#00574a;--g3:#00796b;--g4:#00a896;--g5:#4ecdc4;
-  --glow:rgba(0,168,150,.2);
-  --light:#e8f5f3;
-  --dark:#0d1f1c;--muted:#5a7a75;--border:#cde6e2;
+  --light:#e8f5f3;--dark:#0d1f1c;--muted:#5a7a75;--border:#cde6e2;
   --radius:14px;--trans:.3s cubic-bezier(.4,0,.2,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -23,293 +17,232 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#eef7f5;color:var(--dark
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-thumb{background:var(--g3);border-radius:2px}
 
-/* ═══ HEADER – bela zona ═══ */
+/* ═══ HEADER ═══ */
 .site-header{
   background:#fff;
-  padding:14px 5%;px 5%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  padding:10px 5%;
+  display:flex;align-items:center;justify-content:center;
   border-bottom:3px solid var(--g4);
   box-shadow:0 4px 24px rgba(0,87,74,.10);
 }
-.site-header .header-text{
-  text-align:center;
-  font-family:'Segoe UI',Arial,sans-serif;
-  font-size:clamp(.9rem,2.2vw,1.5rem);
-  font-weight:900;
-  color:#1a3a6b;
-  letter-spacing:.04em;
-  line-height:1.2;
-  text-transform:uppercase;
+.site-header img{
+  max-width:560px;width:100%;height:auto;
+  object-fit:contain;display:block;
 }
-
-
 
 /* ═══ HERO ═══ */
 .hero{
-  padding:60px 5% 56px;
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;gap:0;
-  background:linear-gradient(145deg,var(--g1) 0%,var(--g2) 50%,var(--g3) 100%);
+  padding:52px 5%;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:48px;
+  background:linear-gradient(145deg,var(--g1),var(--g2) 55%,var(--g3));
   position:relative;overflow:hidden;
 }
-.hero-blob{
-  position:absolute;right:-10%;top:-30%;
-  width:60vw;height:60vw;max-width:700px;max-height:700px;
+.blob{
+  position:absolute;pointer-events:none;
   border-radius:60% 40% 30% 70%/60% 30% 70% 40%;
-  background:rgba(78,205,196,.08);pointer-events:none;
+  background:rgba(78,205,196,.07);
   animation:morph 12s ease-in-out infinite;
 }
-.hero-blob2{
-  position:absolute;left:-8%;bottom:-20%;
-  width:40vw;height:40vw;max-width:450px;max-height:450px;
-  border-radius:40% 60% 70% 30%/40% 70% 30% 60%;
-  background:rgba(78,205,196,.06);pointer-events:none;
-  animation:morph 16s ease-in-out infinite reverse;
-}
+.blob1{width:55vw;height:55vw;max-width:600px;max-height:600px;right:-8%;top:-20%;}
+.blob2{width:35vw;height:35vw;max-width:400px;max-height:400px;left:-6%;bottom:-15%;animation-duration:16s;animation-direction:reverse;}
 @keyframes morph{
   0%,100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}
   50%{border-radius:30% 60% 70% 40%/50% 60% 30% 60%}
 }
-.hero-logo{
+
+.hero-left{
   position:relative;z-index:2;
-  margin-bottom:32px;
+  display:flex;align-items:center;justify-content:center;
 }
-.hero-logo img{
-  width:auto;max-width:200px;max-height:100px;height:auto;
-  display:block;margin:0 auto;
-  filter:drop-shadow(0 6px 28px rgba(0,0,0,.4));
+.hero-left img{
+  max-width:200px;max-height:100px;width:auto;height:auto;
+  filter:drop-shadow(0 4px 20px rgba(0,0,0,.4));
 }
-.hero-info{
+
+.hero-right{
   position:relative;z-index:2;
-  display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
-  margin-bottom:28px;
+  display:flex;flex-direction:column;gap:18px;
 }
-.hero-badge{
-  display:flex;align-items:center;gap:7px;
-  background:rgba(255,255,255,.1);
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:30px;padding:8px 16px;
-  font-size:.82rem;font-weight:600;color:rgba(255,255,255,.9);
+.hero-quote{
+  font-size:clamp(.95rem,1.8vw,1.25rem);
+  font-weight:600;color:#fff;line-height:1.65;
+  border-left:4px solid var(--g5);padding-left:16px;
+  font-style:italic;
+}
+.hero-quote em{font-style:normal;color:var(--g5);}
+
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;}
+.hbadge{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  border-radius:30px;padding:7px 14px;
+  font-size:.8rem;font-weight:600;color:rgba(255,255,255,.88);
   backdrop-filter:blur(6px);
 }
-.hero-badge span{font-size:15px;}
-.hero-btns{
-  position:relative;z-index:2;
-  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
-}
-.btn-w{
-  padding:15px 32px;border-radius:11px;font-size:14px;font-weight:700;
+
+.hero-btns{display:flex;flex-wrap:wrap;gap:10px;}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-call{
+  display:flex;align-items:center;gap:10px;
+  padding:15px 28px;border-radius:50px;font-size:14px;font-weight:700;
   text-decoration:none;color:var(--g1);background:#fff;
-  box-shadow:0 4px 18px rgba(0,0,0,.2);transition:var(--trans);
+  box-shadow:0 4px 20px rgba(0,0,0,.22);transition:var(--trans);
+  letter-spacing:.3px;
 }
-.btn-w:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,0,0,.3);}
-.btn-t{
-  padding:15px 32px;border-radius:11px;font-size:14px;font-weight:700;
+.btn-call:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.3);}
+.btn-ig{
+  display:flex;align-items:center;gap:10px;
+  padding:15px 28px;border-radius:50px;font-size:14px;font-weight:700;
   text-decoration:none;color:#fff;
-  border:2px solid rgba(255,255,255,.35);
-  background:rgba(255,255,255,.08);transition:var(--trans);
+  background:linear-gradient(135deg,#833ab4 0%,#fd1d1d 50%,#fcb045 100%);
+  box-shadow:0 4px 20px rgba(131,58,180,.35);transition:var(--trans);
+  letter-spacing:.3px;
 }
-.btn-t:hover{background:rgba(255,255,255,.18);transform:translateY(-2px);}
+.btn-ig:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(131,58,180,.5);}
+.btn-ig svg,.btn-call svg{flex-shrink:0;}
 
-@media(max-width:768px){
-  .hero{padding:40px 5% 40px;}
-  .hero-logo img{max-width:88vw;}
-  .hero-badge{font-size:.76rem;padding:7px 12px;}
-  .btn-w,.btn-t{width:100%;max-width:320px;text-align:center;}
-}
-
-/* ═══ SEKCIJE ═══ */
-.sec{padding:72px 5%;}
+/* ═══ USLUGE ═══ */
+.sec{padding:68px 5%;}
 .sec-tint{background:#e4f2ef;}
-.sl{font-size:10px;font-weight:700;letter-spacing:3px;
-  color:var(--g4);text-transform:uppercase;margin-bottom:8px;}
+.sl{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--g4);text-transform:uppercase;margin-bottom:8px;}
 .st{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;margin-bottom:8px;}
 .ss{color:var(--muted);line-height:1.7;font-size:.95rem;max-width:520px;}
 
-/* ═══ USLUGE + CENOVNIK (kombinovano) ═══ */
-.usluge-wrap{margin-top:40px;display:flex;flex-direction:column;gap:12px;}
-
-/* intro tagovi */
-.usluge-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+.utags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px;}
 .utag{
   padding:6px 14px;border-radius:20px;font-size:.78rem;font-weight:700;
   background:var(--light);color:var(--g2);border:1.5px solid var(--border);
 }
 
-/* svaka usluga */
+.usl-list{display:flex;flex-direction:column;gap:10px;}
 .usl{
-  background:#fff;border:1.5px solid var(--border);
-  border-radius:var(--radius);
-  display:grid;grid-template-columns:56px 1fr auto;
-  align-items:center;gap:0;
-  transition:var(--trans);
-  box-shadow:0 2px 8px rgba(0,87,74,.04);
-  overflow:hidden;
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);
+  display:grid;grid-template-columns:54px 1fr auto;
+  align-items:center;overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,87,74,.04);transition:var(--trans);
 }
 .usl:hover{border-color:var(--g4);box-shadow:0 8px 28px rgba(0,120,107,.10);transform:translateY(-2px);}
-
 .usl-ico{
-  width:56px;align-self:stretch;
-  background:var(--light);border-right:1.5px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;flex-shrink:0;transition:var(--trans);
+  align-self:stretch;background:var(--light);border-right:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+  transition:var(--trans);
 }
 .usl:hover .usl-ico{background:var(--g3);}
-
-.usl-body{padding:14px 18px;}
-.usl-n{font-size:.92rem;font-weight:800;color:var(--dark);margin-bottom:3px;}
-.usl-d{font-size:.79rem;color:var(--muted);line-height:1.5;}
-
+.usl-body{padding:13px 16px;}
+.usl-n{font-size:.9rem;font-weight:800;color:var(--dark);margin-bottom:3px;}
+.usl-d{font-size:.78rem;color:var(--muted);line-height:1.5;}
 .usl-price{
   padding:0 20px;text-align:right;flex-shrink:0;
-  font-size:1rem;font-weight:900;color:var(--g2);white-space:nowrap;
+  font-size:.98rem;font-weight:900;color:var(--g2);white-space:nowrap;
 }
-.usl-price small{display:block;font-size:.68rem;font-weight:500;color:var(--muted);}
-
-@media(max-width:768px){
-  .usl{grid-template-columns:48px 1fr auto;}
-  .usl-ico{width:48px;font-size:18px;}
-  .usl-body{padding:11px 12px;}
-  .usl-n{font-size:.85rem;}
-  .usl-d{font-size:.75rem;}
-  .usl-price{padding:0 14px;font-size:.9rem;}
-}
+.usl-price small{display:block;font-size:.67rem;font-weight:500;color:var(--muted);}
 
 /* ═══ KONTAKT ═══ */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px;}
 .cinfo{display:flex;flex-direction:column;gap:12px;}
-.cc{display:flex;align-items:flex-start;gap:14px;
-  padding:18px;background:#fff;border:1.5px solid var(--border);
-  border-radius:var(--radius);transition:var(--trans);
-  box-shadow:0 2px 8px rgba(0,87,74,.05);}
+.cc{
+  display:flex;align-items:flex-start;gap:14px;padding:16px;
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);
+  box-shadow:0 2px 8px rgba(0,87,74,.05);transition:var(--trans);
+}
 .cc:hover{border-color:var(--g4);box-shadow:0 6px 20px rgba(0,87,74,.1);}
-.cc-ico{width:40px;height:40px;border-radius:10px;flex-shrink:0;
+.cc-ico{
+  width:38px;height:38px;border-radius:10px;flex-shrink:0;
   background:var(--light);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;font-size:18px;}
-.cc-lbl{font-size:9px;color:var(--muted);letter-spacing:1px;
-  text-transform:uppercase;margin-bottom:3px;}
-.cc-val{font-size:.9rem;font-weight:600;color:var(--dark);line-height:1.5;}
+  display:flex;align-items:center;justify-content:center;font-size:17px;
+}
+.cc-lbl{font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
+.cc-val{font-size:.88rem;font-weight:600;color:var(--dark);line-height:1.5;}
 .cc-val a{color:var(--g2);text-decoration:none;}
 .cc-val a:hover{text-decoration:underline;}
-.map-box{border-radius:var(--radius);overflow:hidden;
-  border:1.5px solid var(--border);height:100%;min-height:320px;
-  box-shadow:0 4px 20px rgba(0,87,74,.08);}
-.map-box iframe{width:100%;height:100%;border:none;display:block;}
+.map-box{border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--border);min-height:300px;}
+.map-box iframe{width:100%;height:100%;min-height:300px;border:none;display:block;}
 
 /* ═══ CTA ═══ */
 .cta-bar{
   background:linear-gradient(135deg,var(--g1),var(--g2),var(--g3));
-  padding:70px 5%;text-align:center;
+  padding:64px 5%;text-align:center;
 }
-.cta-bar h2{font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:900;color:#fff;margin-bottom:10px;}
-.cta-bar p{color:rgba(255,255,255,.65);margin-bottom:28px;
-  font-size:.97rem;max-width:440px;margin-left:auto;margin-right:auto;}
-.btn-cta{display:inline-block;padding:15px 36px;border-radius:11px;
+.cta-bar h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:#fff;margin-bottom:10px;}
+.cta-bar p{color:rgba(255,255,255,.65);margin-bottom:26px;font-size:.95rem;}
+.btn-cta{
+  display:inline-block;padding:14px 36px;border-radius:11px;
   font-size:15px;font-weight:700;text-decoration:none;
   color:var(--g1);background:#fff;
-  box-shadow:0 4px 20px rgba(0,0,0,.15);transition:var(--trans);}
+  box-shadow:0 4px 20px rgba(0,0,0,.15);transition:var(--trans);
+}
 .btn-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.2);}
 
 /* ═══ FOOTER ═══ */
 footer{
-  background:var(--g1);
-  padding:28px 5%;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:12px;
-}
-.footer-logo img{
-  height:42px;width:auto;object-fit:contain;
-  filter:drop-shadow(0 1px 6px rgba(0,0,0,.4));
-  transition:var(--trans);
-}
-.footer-logo:hover img{
-  filter:drop-shadow(0 2px 10px rgba(78,205,196,.6));
-  transform:scale(1.04);
+  background:var(--g1);padding:26px 5%;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;
 }
 .fc{font-size:11px;color:rgba(255,255,255,.45);}
 .fl{display:flex;gap:14px;flex-wrap:wrap;}
 .fl a{color:rgba(255,255,255,.45);text-decoration:none;font-size:12px;transition:var(--trans);}
 .fl a:hover{color:var(--g5);}
+.fb{font-size:14px;font-weight:800;color:#fff;}
 
 /* ═══ REVEAL ═══ */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;}
 .reveal.visible{opacity:1;transform:none;}
 
-/* ═══ RESPONSIVE ═══ */
-@media(max-width:960px){
-  .svc-grid{grid-template-columns:1fr 1fr;}
-}
-
+/* ═══ MOBILE ═══ */
 @media(max-width:768px){
-  .site-header{padding:16px 4% 14px;}
-  .site-header img{max-width:100%;}
-
-  .nav-inner{height:auto;min-height:50px;padding:8px 4%;}
-  .nav-link{display:none;}
-  .nav-cta{padding:10px 14px;font-size:12px;}
-
-  .sec{padding:52px 5%;}
-
-  .svc-grid{grid-template-columns:1fr;gap:10px;margin-top:24px;}
-  .svc{
-    display:grid;grid-template-columns:46px 1fr;
-    column-gap:14px;padding:14px 16px;border-radius:12px;
-  }
-  .svc-ico{width:46px;height:46px;font-size:20px;
-    margin:0;grid-row:span 3;align-self:center;border-radius:10px;}
-  .svc-n{font-size:.88rem;margin-bottom:3px;}
-  .svc-d{font-size:.78rem;margin-bottom:6px;
-    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-  .svc-p{font-size:.78rem;padding:3px 8px;}
-
-  .ptable{border-radius:12px;margin-top:20px;}
-  .pt-head{padding:12px 16px;font-size:9px;}
-  .pt-row{padding:12px 16px;}
-  .pt-n{font-size:.82rem;}
-  .pt-v{font-size:.88rem;}
-
-  .contact-grid{grid-template-columns:1fr;gap:16px;margin-top:22px;}
-  .map-box{min-height:220px;height:220px;}
-  .cc{padding:13px 14px;border-radius:12px;}
-  .cc-ico{width:36px;height:36px;font-size:16px;}
-
-  .cta-bar{padding:50px 5%;}
-  .btn-cta{width:100%;max-width:290px;}
-
-  footer{flex-direction:column;text-align:center;gap:10px;padding:22px 5%;}
+  .hero{grid-template-columns:1fr;padding:36px 5%;gap:28px;}
+  .hero-left{justify-content:flex-start;}
+  .hero-left img{max-width:160px;max-height:80px;}
+  .hero-quote{font-size:.9rem;}
+  .btn-call,.btn-scroll,.btn-ig{flex:1;min-width:130px;justify-content:center;}
+  .sec{padding:48px 5%;}
+  .usl{grid-template-columns:46px 1fr auto;}
+  .usl-ico{font-size:18px;}
+  .usl-body{padding:11px 12px;}
+  .usl-n{font-size:.84rem;}
+  .usl-d{font-size:.74rem;}
+  .usl-price{padding:0 12px;font-size:.88rem;}
+  .contact-grid{grid-template-columns:1fr;}
+  .map-box{min-height:220px;}
+  footer{flex-direction:column;text-align:center;gap:8px;}
   .fl{justify-content:center;}
-  .footer-logo img{height:34px;}
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER – bela zona, logo maksimalan -->
+<!-- HEADER -->
 <header class="site-header">
   <img src="logo3.png" alt="Stomatološka Ordinacija Bogdanović"/>
 </header>
 
-
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-blob"></div>
-  <div class="hero-blob2"></div>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
 
-  <div class="hero-logo">
-    <img src="logo2.png" alt="Stomatološka Ordinacija Bogdanović"/>
+  <div class="hero-left">
+    <img src="logo2.png" alt="logo"/>
   </div>
 
-  <div class="hero-info">
-    <div class="hero-badge"><span>📍</span> Valjevski put 247, Stubline</div>
-    <div class="hero-badge"><span>🕒</span> Pon–Pet: 10:00 – 19:00</div>
-    <div class="hero-badge"><span>📞</span> 061 3057461</div>
-  </div>
-
-  <div class="hero-btns">
-    <a href="tel:+381613057461" class="btn-w">📞 Zakažite termin</a>
-    <a href="#usluge" class="btn-t">Pogledajte usluge ↓</a>
+  <div class="hero-right">
+    <p class="hero-quote">
+      Kompletna stomatološka zaštita u Stublinama –
+      od <em>implantata i krunica</em> do estetike i čišćenja.
+      Stručan tim, moderna oprema, <em>fer cene</em>.
+    </p>
+    <div class="hero-badges">
+      <div class="hbadge">📍 Valjevski put 247, Stubline</div>
+      <div class="hbadge">🕒 Pon–Pet: 10:00–19:00</div>
+    </div>
+    <div class="hero-btns">
+      <a href="tel:+381613057461" class="btn-call">📞 Zakažite termin</a>
+      <a href="https://instagram.com/" target="_blank" class="btn-ig">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+    </div>
   </div>
 </section>
 
@@ -317,97 +250,53 @@ footer{
 <div class="sec" id="usluge">
   <div class="sl reveal">Naše usluge</div>
   <h2 class="st reveal">Stomatološke usluge i cene</h2>
-  <p class="ss reveal">Sveobuhvatna stomatološka zaštita – protetika, oralna hirurgija, estetska stomatologija i lečenje bolesti zuba.</p>
-
-  <div class="usluge-tags reveal">
+  <p class="ss reveal">Sveobuhvatna zaštita – protetika, oralna hirurgija, estetska stomatologija i lečenje zuba.</p>
+  <div class="utags reveal">
     <span class="utag">🏥 Oralna hirurgija</span>
     <span class="utag">👑 Protetika</span>
     <span class="utag">✨ Estetska stomatologija</span>
     <span class="utag">🦷 Lečenje zuba</span>
   </div>
-
-  <div class="usluge-wrap">
-    <div class="usl reveal">
-      <div class="usl-ico">👑</div>
-      <div class="usl-body"><div class="usl-n">Keramičke krunice i mostovi</div><div class="usl-d">Idealno rešenje za obnovu oštećenih zuba. Trajna i estetski savršena protetika.</div></div>
-      <div class="usl-price">od 100€<small>po zubu</small></div>
-    </div>
-    <div class="usl reveal">
-      <div class="usl-ico">🦷</div>
-      <div class="usl-body"><div class="usl-n">Proteze</div><div class="usl-d">Vizil, akrilatne i silikonske. Udobna i funkcionalna rešenja za nadoknadu izgubljenih zuba.</div></div>
-      <div class="usl-price">od 250€</div>
-    </div>
-    <div class="usl reveal">
-      <div class="usl-ico">✨</div>
-      <div class="usl-body"><div class="usl-n">Viniri keramički</div><div class="usl-d">Estetski savršeni prekrivači za poboljšanje izgleda vaših zuba.</div></div>
-      <div class="usl-price">od 200€<small>po zubu</small></div>
-    </div>
-    <div class="usl reveal">
-      <div class="usl-ico">✨</div>
-      <div class="usl-body"><div class="usl-n">Viniri kompozitni</div><div class="usl-d">Pristupačnija alternativa keramičkim vinirima sa odličnim estetskim efektom.</div></div>
-      <div class="usl-price">od 35€<small>po zubu</small></div>
-    </div>
-    <div class="usl reveal">
-      <div class="usl-ico">🔩</div>
-      <div class="usl-body"><div class="usl-n">Implanti</div><div class="usl-d">Trajna rešenja za zamenu izgubljenih zuba. Funkcija i estetika kao prirodni zub.</div></div>
-      <div class="usl-price">od 350€</div>
-    </div>
-    <div class="usl reveal">
-      <div class="usl-ico">🏥</div>
-      <div class="usl-body"><div class="usl-n">Oralno-hirurški zahvati</div><div class="usl-d">Precizni zahvati za složenije stomatološke probleme uz maksimalnu brigu o pacijentu.</div></div>
-      <div class="usl-price">od 100€</div>
-    </div>
-    <div class="usl reveal">
-      <div class="usl-ico">💎</div>
-      <div class="usl-body"><div class="usl-n">Estetske plombe</div><div class="usl-d">Savremena i prirodna rešenja za obnovu oštećenih zuba. Dugotrajni efekat.</div></div>
-      <div class="usl-price">od 20€</div>
-    </div>
-    <div class="usl reveal">
-      <div class="usl-ico">⬜</div>
-      <div class="usl-body"><div class="usl-n">Izbeljivanje zuba</div><div class="usl-d">Bezbedna i efikasna metoda za osveženje beline zuba. Profesionalni tretman.</div></div>
-      <div class="usl-price">od 100€</div>
-    </div>
-    <div class="usl reveal">
-      <div class="usl-ico">🪥</div>
-      <div class="usl-body"><div class="usl-n">Čišćenje zuba</div><div class="usl-d">Profesionalno čišćenje i poliranje za očuvanje zdravlja vaših zuba. Uklanjanje kamenca.</div></div>
-      <div class="usl-price">od 20€</div>
-    </div>
+  <div class="usl-list">
+    <div class="usl reveal"><div class="usl-ico">👑</div><div class="usl-body"><div class="usl-n">Keramičke krunice i mostovi</div><div class="usl-d">Idealno rešenje za obnovu oštećenih zuba. Trajna i estetski savršena protetika.</div></div><div class="usl-price">od 100€<small>po zubu</small></div></div>
+    <div class="usl reveal"><div class="usl-ico">🦷</div><div class="usl-body"><div class="usl-n">Proteze</div><div class="usl-d">Vizil, akrilatne i silikonske. Udobna i funkcionalna rešenja za nadoknadu izgubljenih zuba.</div></div><div class="usl-price">od 250€</div></div>
+    <div class="usl reveal"><div class="usl-ico">✨</div><div class="usl-body"><div class="usl-n">Viniri keramički</div><div class="usl-d">Estetski savršeni prekrivači za poboljšanje izgleda vaših zuba.</div></div><div class="usl-price">od 200€<small>po zubu</small></div></div>
+    <div class="usl reveal"><div class="usl-ico">✨</div><div class="usl-body"><div class="usl-n">Viniri kompozitni</div><div class="usl-d">Pristupačnija alternativa keramičkim vinirima sa odličnim estetskim efektom.</div></div><div class="usl-price">od 35€<small>po zubu</small></div></div>
+    <div class="usl reveal"><div class="usl-ico">🔩</div><div class="usl-body"><div class="usl-n">Implanti</div><div class="usl-d">Trajna rešenja za zamenu izgubljenih zuba. Funkcija i estetika kao prirodni zub.</div></div><div class="usl-price">od 350€</div></div>
+    <div class="usl reveal"><div class="usl-ico">🏥</div><div class="usl-body"><div class="usl-n">Oralno-hirurški zahvati</div><div class="usl-d">Precizni zahvati za složenije stomatološke probleme.</div></div><div class="usl-price">od 100€</div></div>
+    <div class="usl reveal"><div class="usl-ico">💎</div><div class="usl-body"><div class="usl-n">Estetske plombe</div><div class="usl-d">Savremena i prirodna rešenja za obnovu oštećenih zuba. Dugotrajni efekat.</div></div><div class="usl-price">od 20€</div></div>
+    <div class="usl reveal"><div class="usl-ico">⬜</div><div class="usl-body"><div class="usl-n">Izbeljivanje zuba</div><div class="usl-d">Bezbedna i efikasna metoda za osveženje beline zuba.</div></div><div class="usl-price">od 100€</div></div>
+    <div class="usl reveal"><div class="usl-ico">🪥</div><div class="usl-body"><div class="usl-n">Čišćenje zuba</div><div class="usl-d">Profesionalno čišćenje i poliranje za očuvanje zdravlja vaših zuba.</div></div><div class="usl-price">od 20€</div></div>
   </div>
 </div>
 
 <!-- KONTAKT -->
-<div class="sec" id="kontakt">
+<div class="sec sec-tint" id="kontakt">
   <div class="sl reveal">Pronađite nas</div>
   <h2 class="st reveal">Kontakt i lokacija</h2>
   <div class="contact-grid">
     <div class="cinfo">
       <div class="cc reveal">
         <div class="cc-ico">📞</div>
-        <div><div class="cc-lbl">Telefon</div>
-          <div class="cc-val"><a href="tel:+381613057461">061 3057461</a></div></div>
+        <div><div class="cc-lbl">Telefon</div><div class="cc-val"><a href="tel:+381613057461">061 3057461</a></div></div>
       </div>
       <div class="cc reveal">
         <div class="cc-ico">📍</div>
-        <div><div class="cc-lbl">Adresa</div>
-          <div class="cc-val">Valjevski put 247, Stubline<br>
-            <a href="https://maps.google.com/?q=44.574364,20.152403" target="_blank">Otvori na mapi →</a></div></div>
+        <div><div class="cc-lbl">Adresa</div><div class="cc-val">Valjevski put 247, Stubline<br><a href="https://maps.google.com/?q=44.574364,20.152403" target="_blank">Otvori na mapi →</a></div></div>
       </div>
       <div class="cc reveal">
         <div class="cc-ico">🕒</div>
-        <div><div class="cc-lbl">Radno vreme</div>
-          <div class="cc-val">Pon – Pet: <strong>10:00 – 19:00</strong><br>
-            <span style="color:var(--muted);font-size:.82rem">⚠️ Zakazivanje obavezno</span></div></div>
+        <div><div class="cc-lbl">Radno vreme</div><div class="cc-val">Pon – Pet: <strong>10:00 – 19:00</strong><br><span style="color:var(--muted);font-size:.8rem">⚠️ Zakazivanje obavezno</span></div></div>
       </div>
     </div>
     <div class="map-box reveal">
-      <iframe src="https://maps.google.com/maps?q=44.574364,20.152403&z=15&output=embed"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://maps.google.com/maps?q=44.574364,20.152403&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </div>
 
 <!-- CTA -->
-<div class="cta-bar reveal">
+<div class="cta-bar">
   <h2>Zakažite termin danas</h2>
   <p>Pozovite nas i dođite u termin koji vama odgovara. Pon–Pet 10–19h.</p>
   <a href="tel:+381613057461" class="btn-cta">📞 061 3057461</a>
@@ -415,13 +304,10 @@ footer{
 
 <!-- FOOTER -->
 <footer>
-  <a class="footer-logo" href="#">
-    <img src="logo.png" alt="Stomatološka Ordinacija Bogdanović"/>
-  </a>
+  <div class="fb">🦷 Ordinacija Bogdanović</div>
   <div class="fc">© 2025 · Valjevski put 247, Stubline</div>
   <div class="fl">
     <a href="#usluge">Usluge</a>
-    <a href="#cenovnik">Cenovnik</a>
     <a href="#kontakt">Kontakt</a>
     <a href="https://maps.google.com/?q=44.574364,20.152403" target="_blank">Mapa</a>
   </div>
