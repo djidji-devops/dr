@@ -44,19 +44,23 @@ nav.scrolled{box-shadow:0 3px 20px rgba(0,87,74,.1)}
 .nav-inner{
   height:64px;padding:0 5%;
   display:flex;align-items:center;justify-content:space-between;gap:12px}
-.nav-logo{text-decoration:none;display:flex;align-items:center;gap:10px;min-width:0}
-.nav-logo-icon{
-  width:40px;height:40px;border-radius:10px;flex-shrink:0;
-  background:linear-gradient(135deg,var(--g2),var(--g4));
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;box-shadow:0 2px 10px var(--glow)}
-.nav-logo-text{min-width:0;display:flex;flex-direction:column}
-.nav-logo-text .t1{
-  font-size:9.5px;color:var(--muted);letter-spacing:1.5px;
-  text-transform:uppercase;white-space:nowrap;line-height:1.2}
-.nav-logo-text .t2{
-  font-size:15px;font-weight:800;color:var(--g1);
-  white-space:nowrap;line-height:1.2}
+
+/* ── LOGO ── */
+.nav-logo{
+  text-decoration:none;display:flex;align-items:center;
+  min-width:0;flex-shrink:1}
+.nav-logo img{
+  height:44px;          /* visina loga u navbaru */
+  width:auto;
+  object-fit:contain;
+  display:block;
+  /* blagi drop-shadow koji se uklapa u zelenu temu */
+  filter:drop-shadow(0 1px 4px rgba(0,87,74,.18));
+  transition:var(--trans)}
+.nav-logo:hover img{
+  filter:drop-shadow(0 2px 8px rgba(0,168,150,.35));
+  transform:scale(1.03)}
+
 .nav-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
 .nav-link{text-decoration:none;padding:8px 12px;border-radius:8px;
   font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;transition:var(--trans)}
@@ -82,7 +86,18 @@ nav.scrolled{box-shadow:0 3px 20px rgba(0,87,74,.1)}
   background:rgba(78,205,196,.1);pointer-events:none;
   animation:morph 12s ease-in-out infinite}
 
-/* SVG pozadina – zubari motivi */
+/* ── HERO LOGO – veliki beli logotip u hero sekciji ── */
+.hero-logo-wrap{
+  margin-bottom:22px;
+  animation:up .5s .02s both}
+.hero-logo-wrap img{
+  height:72px;        /* veličina u hero sekciji */
+  width:auto;
+  object-fit:contain;
+  /* logo ima tamnu pozadinu – invertujemo ga da izgleda belo na tamnoj hero pozadini */
+  filter: brightness(0) invert(1) drop-shadow(0 2px 12px rgba(78,205,196,.4));
+  display:block}
+
 .hero-bg-svg{
   position:absolute;inset:0;width:100%;height:100%;
   pointer-events:none;z-index:0}
@@ -228,7 +243,16 @@ nav.scrolled{box-shadow:0 3px 20px rgba(0,87,74,.1)}
 footer{background:var(--g1);color:rgba(255,255,255,.45);
   padding:30px 5%;display:flex;align-items:center;
   justify-content:space-between;flex-wrap:wrap;gap:10px}
-.fb{font-size:14px;font-weight:800;color:#fff}
+
+/* ── FOOTER LOGO ── */
+.footer-logo img{
+  height:36px;
+  width:auto;
+  object-fit:contain;
+  filter:brightness(0) invert(1) opacity(.75);
+  transition:var(--trans)}
+.footer-logo:hover img{filter:brightness(0) invert(1) opacity(1)}
+
 .fc{font-size:11px}
 .fl{display:flex;gap:14px;flex-wrap:wrap}
 .fl a{color:rgba(255,255,255,.45);text-decoration:none;
@@ -251,22 +275,19 @@ footer{background:var(--g1);color:rgba(255,255,255,.45);
 }
 
 @media(max-width:768px){
-  /* NAV – kompaktan, logo čitljiv */
   nav .nav-inner{height:auto;min-height:56px;padding:8px 4%;flex-wrap:nowrap}
-  .nav-logo-icon{width:34px;height:34px;font-size:18px;border-radius:8px}
-  .nav-logo-text .t1{font-size:8.5px;letter-spacing:1px}
-  .nav-logo-text .t2{font-size:13px}
+  /* logo manji na mobilnom */
+  .nav-logo img{height:36px}
   .nav-link{display:none}
   .nav-cta{padding:9px 13px;font-size:12px;border-radius:8px}
 
-  /* HERO */
   .hero{padding:72px 5% 52px;min-height:100svh}
+  .hero-logo-wrap img{height:56px}
   .hero h1{font-size:clamp(1.85rem,7.5vw,2.5rem);margin-bottom:14px}
   .hero-sub{font-size:.9rem;margin-bottom:24px}
   .hero-btns{flex-direction:column;gap:10px}
   .btn-w,.btn-t{width:100%;text-align:center;padding:15px 20px;font-size:14px}
 
-  /* USLUGE */
   .sec{padding:56px 5%}
   .svc-grid{grid-template-columns:1fr;gap:10px;margin-top:28px}
   .svc{
@@ -281,7 +302,6 @@ footer{background:var(--g1);color:rgba(255,255,255,.45);
     -webkit-box-orient:vertical;overflow:hidden}
   .svc-p{font-size:.78rem;padding:3px 8px}
 
-  /* CENOVNIK */
   .ptable{border-radius:12px;margin-top:24px}
   .pt-head{padding:12px 16px;font-size:9px}
   .pt-row{padding:12px 16px;gap:8px}
@@ -289,7 +309,6 @@ footer{background:var(--g1);color:rgba(255,255,255,.45);
   .pt-n em{font-size:13px}
   .pt-v{font-size:.88rem}
 
-  /* KONTAKT */
   .contact-grid{grid-template-columns:1fr;gap:16px;margin-top:26px}
   .map-box{min-height:220px;height:220px;border-radius:12px}
   .cc{padding:13px 14px;gap:12px;border-radius:12px}
@@ -297,30 +316,26 @@ footer{background:var(--g1);color:rgba(255,255,255,.45);
   .cc-lbl{font-size:8px}
   .cc-val{font-size:.86rem}
 
-  /* CTA */
   .cta-bar{padding:52px 5%}
   .cta-bar::before{display:none}
   .cta-bar h2{font-size:1.45rem}
   .cta-bar p{font-size:.88rem;margin-bottom:22px}
   .btn-cta{padding:14px 24px;font-size:14px;width:100%;max-width:290px}
 
-  /* FOOTER */
   footer{flex-direction:column;text-align:center;gap:8px;padding:22px 5%}
   .fl{justify-content:center;gap:12px}
-  .fb{font-size:13px}
+  .footer-logo img{height:30px}
 }
 
 @media(max-width:480px){
   .svc-grid{gap:8px}
   .hero h1{font-size:1.7rem}
-  .nav-logo-text .t1{display:none}
-  .nav-logo-text .t2{font-size:14px;font-weight:900}
+  .nav-logo img{height:32px}
 }
 
 @media(max-width:360px){
   .nav-inner{padding:8px 3%}
-  .nav-logo-icon{width:30px;height:30px;font-size:16px}
-  .nav-logo-text .t2{font-size:13px}
+  .nav-logo img{height:28px}
   .nav-cta{font-size:11px;padding:8px 10px}
   .hero h1{font-size:1.5rem}
   .btn-w,.btn-t{font-size:13px;padding:13px 14px}
@@ -333,11 +348,7 @@ footer{background:var(--g1);color:rgba(255,255,255,.45);
 <nav id="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="#">
-      <div class="nav-logo-icon">🦷</div>
-      <div class="nav-logo-text">
-        <span class="t1">Stomatološka Ordinacija</span>
-        <span class="t2">Bogdanović</span>
-      </div>
+      <img src="logo.png" alt="Stomatološka Ordinacija Bogdanović"/>
     </a>
     <div class="nav-right">
       <a href="#usluge"   class="nav-link">Usluge</a>
@@ -353,84 +364,61 @@ footer{background:var(--g1);color:rgba(255,255,255,.45);
   <div class="hero-blob"></div>
 
   <svg class="hero-bg-svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-
-    <!-- KRUPNI ZUB levo dole -->
     <g opacity="0.09" transform="translate(-20,430) scale(2.4)">
       <path d="M40 10 C20 10 5 28 5 50 C5 65 10 78 15 95 C20 112 22 130 30 140 C34 145 38 143 40 135 C42 143 46 145 50 140 C58 130 60 112 65 95 C70 78 75 65 75 50 C75 28 60 10 40 10Z" fill="white"/>
     </g>
-    <!-- KRUPNI ZUB desno gore -->
     <g opacity="0.07" transform="translate(1260,-30) scale(2)">
       <path d="M40 10 C20 10 5 28 5 50 C5 65 10 78 15 95 C20 112 22 130 30 140 C34 145 38 143 40 135 C42 143 46 145 50 140 C58 130 60 112 65 95 C70 78 75 65 75 50 C75 28 60 10 40 10Z" fill="white"/>
     </g>
-    <!-- ZUB sredina dole -->
     <g opacity="0.06" transform="translate(620,580) scale(1.5)">
       <path d="M40 10 C20 10 5 28 5 50 C5 65 10 78 15 95 C20 112 22 130 30 140 C34 145 38 143 40 135 C42 143 46 145 50 140 C58 130 60 112 65 95 C70 78 75 65 75 50 C75 28 60 10 40 10Z" fill="white"/>
     </g>
-    <!-- ZUB mali gore levo -->
     <g opacity="0.06" transform="translate(100,60) scale(0.9)">
       <path d="M40 10 C20 10 5 28 5 50 C5 65 10 78 15 95 C20 112 22 130 30 140 C34 145 38 143 40 135 C42 143 46 145 50 140 C58 130 60 112 65 95 C70 78 75 65 75 50 C75 28 60 10 40 10Z" fill="white"/>
     </g>
-    <!-- ZUB mali desno sredina -->
     <g opacity="0.055" transform="translate(1340,380) scale(0.8)">
       <path d="M40 10 C20 10 5 28 5 50 C5 65 10 78 15 95 C20 112 22 130 30 140 C34 145 38 143 40 135 C42 143 46 145 50 140 C58 130 60 112 65 95 C70 78 75 65 75 50 C75 28 60 10 40 10Z" fill="white"/>
     </g>
-
-    <!-- MEDICINSKI KRST veliki -->
     <g opacity="0.07" transform="translate(860,20) scale(1.4)">
       <rect x="18" y="0" width="14" height="50" rx="3" fill="white"/>
       <rect x="0" y="18" width="50" height="14" rx="3" fill="white"/>
     </g>
-    <!-- KRST desno dole -->
     <g opacity="0.07" transform="translate(1340,560) scale(1.8)">
       <rect x="18" y="0" width="14" height="50" rx="3" fill="white"/>
       <rect x="0" y="18" width="50" height="14" rx="3" fill="white"/>
     </g>
-    <!-- KRST mali levo sredina -->
     <g opacity="0.06" transform="translate(30,310) scale(1)">
       <rect x="18" y="0" width="14" height="50" rx="3" fill="white"/>
       <rect x="0" y="18" width="50" height="14" rx="3" fill="white"/>
     </g>
-    <!-- KRST mali dole levo -->
     <g opacity="0.06" transform="translate(440,680) scale(0.9)">
       <rect x="18" y="0" width="14" height="50" rx="3" fill="white"/>
       <rect x="0" y="18" width="50" height="14" rx="3" fill="white"/>
     </g>
-
-    <!-- KRUŽNI PRSTENOVI -->
     <circle cx="720" cy="400" r="260" fill="none" stroke="white" stroke-width="1.2" opacity="0.05"/>
     <circle cx="720" cy="400" r="390" fill="none" stroke="white" stroke-width="1" opacity="0.04"/>
     <circle cx="720" cy="400" r="530" fill="none" stroke="white" stroke-width="0.7" opacity="0.03"/>
     <circle cx="720" cy="400" r="680" fill="none" stroke="white" stroke-width="0.5" opacity="0.025"/>
-    <!-- Mali krug gore desno -->
     <circle cx="1300" cy="120" r="80" fill="none" stroke="white" stroke-width="1" opacity="0.06"/>
     <circle cx="1300" cy="120" r="50" fill="none" stroke="white" stroke-width="0.6" opacity="0.05"/>
-    <!-- Mali krug dole levo -->
     <circle cx="140" cy="680" r="90" fill="none" stroke="white" stroke-width="1" opacity="0.05"/>
     <circle cx="140" cy="680" r="55" fill="none" stroke="white" stroke-width="0.6" opacity="0.04"/>
-
-    <!-- DIJAGONALNE LINIJE -->
     <line x1="0" y1="700" x2="450" y2="0"  stroke="white" stroke-width="1"   opacity="0.05"/>
     <line x1="70" y1="800" x2="520" y2="0" stroke="white" stroke-width="0.5" opacity="0.03"/>
     <line x1="980" y1="0" x2="1440" y2="600" stroke="white" stroke-width="1" opacity="0.04"/>
     <line x1="1060" y1="0" x2="1440" y2="500" stroke="white" stroke-width="0.5" opacity="0.03"/>
-    <!-- Horizontalna linija -->
     <line x1="0" y1="400" x2="1440" y2="400" stroke="white" stroke-width="0.5" stroke-dasharray="6 18" opacity="0.04"/>
-
-    <!-- TAČKASTA MREŽA levo gore -->
     <g opacity="0.07" fill="white">
       <circle cx="210" cy="130" r="2.5"/><circle cx="270" cy="130" r="2.5"/><circle cx="330" cy="130" r="2.5"/><circle cx="390" cy="130" r="2.5"/><circle cx="450" cy="130" r="2.5"/>
       <circle cx="210" cy="190" r="2.5"/><circle cx="270" cy="190" r="2.5"/><circle cx="330" cy="190" r="2.5"/><circle cx="390" cy="190" r="2.5"/><circle cx="450" cy="190" r="2.5"/>
       <circle cx="210" cy="250" r="2.5"/><circle cx="270" cy="250" r="2.5"/><circle cx="330" cy="250" r="2.5"/><circle cx="390" cy="250" r="2.5"/>
       <circle cx="210" cy="310" r="2"/>  <circle cx="270" cy="310" r="2"/>  <circle cx="330" cy="310" r="2"/>
     </g>
-    <!-- TAČKASTA MREŽA desno dole -->
     <g opacity="0.06" fill="white">
       <circle cx="1040" cy="510" r="2.5"/><circle cx="1100" cy="510" r="2.5"/><circle cx="1160" cy="510" r="2.5"/><circle cx="1220" cy="510" r="2.5"/><circle cx="1280" cy="510" r="2.5"/>
       <circle cx="1040" cy="570" r="2.5"/><circle cx="1100" cy="570" r="2.5"/><circle cx="1160" cy="570" r="2.5"/><circle cx="1220" cy="570" r="2.5"/>
       <circle cx="1040" cy="630" r="2"/>  <circle cx="1100" cy="630" r="2"/>  <circle cx="1160" cy="630" r="2"/>
     </g>
-
-    <!-- PLUS ZNAKOVI -->
     <g fill="white" font-family="Arial" font-weight="200" text-anchor="middle">
       <text x="500"  y="85"  font-size="32" opacity="0.09">+</text>
       <text x="980"  y="55"  font-size="24" opacity="0.07">+</text>
@@ -440,12 +428,8 @@ footer{background:var(--g1);color:rgba(255,255,255,.45);
       <text x="330"  y="760" font-size="22" opacity="0.06">+</text>
       <text x="1160" y="700" font-size="20" opacity="0.06">+</text>
     </g>
-
-    <!-- TALASASTE LINIJE – organski osećaj -->
     <path d="M0 600 Q360 520 720 600 Q1080 680 1440 600" fill="none" stroke="white" stroke-width="1" opacity="0.05"/>
     <path d="M0 640 Q360 560 720 640 Q1080 720 1440 640" fill="none" stroke="white" stroke-width="0.6" opacity="0.035"/>
-
-    <!-- HEKSAGONALNA MREŽA – sci-fi/medical efekat -->
     <g opacity="0.04" stroke="white" stroke-width="0.8" fill="none">
       <polygon points="1200,200 1230,183 1260,200 1260,234 1230,251 1200,234"/>
       <polygon points="1260,200 1290,183 1320,200 1320,234 1290,251 1260,234"/>
@@ -457,8 +441,6 @@ footer{background:var(--g1);color:rgba(255,255,255,.45);
       <polygon points="220,480 250,463 280,480 280,514 250,531 220,514"/>
       <polygon points="190,531 220,514 250,531 250,565 220,582 190,565"/>
     </g>
-
-    <!-- DNA SPIRALA – medicinski motiv -->
     <g opacity="0.06" stroke="white" stroke-width="1.2" fill="none">
       <path d="M1380,650 Q1400,630 1380,610 Q1360,590 1380,570 Q1400,550 1380,530 Q1360,510 1380,490"/>
       <path d="M1420,650 Q1400,630 1420,610 Q1440,590 1420,570 Q1400,550 1420,530 Q1440,510 1420,490"/>
@@ -470,9 +452,13 @@ footer{background:var(--g1);color:rgba(255,255,255,.45);
       <line x1="1385" y1="524" x2="1415" y2="524" stroke-width="1"/>
       <line x1="1380" y1="500" x2="1420" y2="500" stroke-width="1"/>
     </g>
-
   </svg>
+
   <div class="hero-left">
+    <!-- Logo u hero sekciji – beli/invertovan na tamnoj pozadini -->
+    <div class="hero-logo-wrap">
+      <img src="logo.png" alt="Stomatološka Ordinacija Bogdanović"/>
+    </div>
     <h1>Zdravi zubi,<br><em>lep osmeh</em></h1>
     <p class="hero-sub">
       Kompletna stomatološka zaštita u Stublinama –
@@ -574,7 +560,9 @@ footer{background:var(--g1);color:rgba(255,255,255,.45);
 
 <!-- FOOTER -->
 <footer>
-  <div class="fb">🦷 Stomatološka Ordinacija Bogdanović</div>
+  <a class="footer-logo" href="#">
+    <img src="logo.png" alt="Stomatološka Ordinacija Bogdanović"/>
+  </a>
   <div class="fc">© 2025 · Valjevski put 247, Stubline</div>
   <div class="fl">
     <a href="#usluge">Usluge</a>
