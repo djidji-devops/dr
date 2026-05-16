@@ -40,17 +40,25 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:var(--dark);overflow-x:hidden
 .hero{
   position:relative;z-index:1;
   min-height:100svh;
-  display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;gap:0;
+  display:flex;align-items:center;justify-content:center;
   padding:0;overflow:hidden;
 }
 .hero-left{
-  padding:80px 6% 80px 8%;
+  padding:80px 8%;
   display:flex;flex-direction:column;gap:28px;
-  justify-content:center;
+  align-items:center;text-align:center;
+  max-width:700px;width:100%;
 }
+.hero-tagline{
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:900;color:var(--g1);line-height:1.15;
+  margin-top:16px;
+}
+.hero-desc{text-align:center;}
+.hero-badges{justify-content:center;}
+.hero-btns{justify-content:center;}
 .hero-logo img{
-  max-width:400px;width:100%;height:auto;
+  max-width:600px;width:100%;height:auto;
   filter:drop-shadow(0 4px 18px rgba(0,80,50,.18));
 }
 .hero-tagline{
@@ -239,24 +247,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:var(--dark);overflow-x:hidden
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
         Instagram
       </a>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <div class="hero-card">
-      <div class="hcard-title">Pregled usluga i cena</div>
-      <div class="hcard-rows">
-        <div class="hcard-row"><span class="hcard-name">👑 Krunice i mostovi</span><span class="hcard-price">od 100€</span></div>
-        <div class="hcard-row"><span class="hcard-name">🔩 Implanti</span><span class="hcard-price">od 350€</span></div>
-        <div class="hcard-row"><span class="hcard-name">✨ Viniri</span><span class="hcard-price">od 35€</span></div>
-        <div class="hcard-row"><span class="hcard-name">⬜ Izbeljivanje</span><span class="hcard-price">od 100€</span></div>
-        <div class="hcard-row"><span class="hcard-name">🪥 Čišćenje</span><span class="hcard-price">od 20€</span></div>
-      </div>
-    </div>
-    <div class="hero-stats">
-      <div class="hstat"><div class="hstat-n">9+</div><div class="hstat-l">Usluga</div></div>
-      <div class="hstat"><div class="hstat-n">20€</div><div class="hstat-l">Od čišćenja</div></div>
-      <div class="hstat"><div class="hstat-n">10–19h</div><div class="hstat-l">Pon – Pet</div></div>
     </div>
   </div>
 
