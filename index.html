@@ -42,32 +42,44 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:var(--dark);overflow-x:hidden
   padding:0;overflow:hidden;
 }
 .hero-left{
-  padding:24px 8% 80px;
-  display:flex;flex-direction:column;gap:28px;
+  padding:32px 6% 80px;
+  display:flex;flex-direction:column;gap:0;
   align-items:center;text-align:center;
-  max-width:1200px;width:100%;
+  max-width:860px;width:100%;
 }
-.hero-logo{margin-top:0;}
+.hero-logo{margin-top:0;margin-bottom:4px;}
 .hero-logo img{
-  max-width:1200px;width:100%;height:auto;
+  max-width:680px;width:90%;height:auto;
   filter:drop-shadow(0 4px 18px rgba(0,80,50,.18));
 }
+.hero-divider{
+  width:60px;height:3px;border-radius:4px;
+  background:linear-gradient(90deg,var(--mint),var(--mint2));
+  margin:12px auto 18px;
+  opacity:.7;
+}
 .hero-tagline{
-  font-size:clamp(1.2rem,2vw,1.7rem);
-  font-weight:900;color:var(--g1);line-height:1.15;
+  font-size:clamp(1rem,1.8vw,1.35rem);
+  font-weight:700;color:var(--muted);line-height:1.4;
+  letter-spacing:.04em;margin-bottom:22px;
 }
-.hero-tagline span{color:var(--mint);}
+.hero-tagline span{color:var(--mint);font-weight:900;}
 .hero-desc{
-  font-size:clamp(.92rem,1.4vw,1.05rem);
-  color:var(--muted);line-height:1.85;max-width:460px;
-  text-align:center;
+  font-size:clamp(.85rem,1.3vw,.97rem);
+  color:var(--muted);line-height:1.85;max-width:420px;
+  text-align:center;margin-bottom:24px;
+  background:rgba(255,255,255,.45);
+  backdrop-filter:blur(8px);
+  border:1.5px solid rgba(255,255,255,.75);
+  border-radius:14px;padding:16px 24px;
 }
-.hero-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px;}
 .hbadge{
-  padding:7px 14px;border-radius:30px;
+  padding:8px 16px;border-radius:30px;
   font-size:.78rem;font-weight:600;
   background:rgba(255,255,255,.65);border:1.5px solid rgba(0,100,60,.15);
   color:var(--g1);backdrop-filter:blur(6px);
+  box-shadow:0 2px 8px rgba(0,80,50,.07);
 }
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;}
 .btn-call{
@@ -149,7 +161,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:var(--dark);overflow-x:hidden
 
 @media(max-width:900px){
   .hero{min-height:100svh;}
-  .hero-left{padding:16px 6% 40px;}
+  .hero-left{padding:20px 5% 40px;}
   .hero-logo img{max-width:480px;}
   .hero-tagline{font-size:clamp(1rem,4vw,1.4rem);}
   .usl-grid{grid-template-columns:1fr;}
@@ -176,7 +188,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:var(--dark);overflow-x:hidden
     <div class="hero-logo">
       <img src="logo.png" alt="Stomatološka Ordinacija Bogdanović"/>
     </div>
-    <div class="hero-tagline"><br><span>ZDRAVI ZUBI - LEP OSMEH :)</span></div>
+    <div class="hero-divider"></div>
+    <div class="hero-tagline">ZDRAVI ZUBI &nbsp;·&nbsp; <span>LEP OSMEH :)</span></div>
     <p class="hero-desc">
       Kompletna stomatološka zaštita<br>
       Implanti, krunice, estetika i preventiva<br>
